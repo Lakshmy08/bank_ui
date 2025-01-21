@@ -1,0 +1,69 @@
+body {
+    background-color: rgb(239, 237, 235);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Content Styling */
+#main {
+    background-color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom:3px;
+     
+}
+
+/* Header Styling */
+#head {
+    padding-top: 2px;
+    padding-left: 3px;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(8, 8, 74);
+}
+
+#head1 {
+    padding-top: 2px;
+    padding-left: 3px;
+    padding-right: 2px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(8, 8, 74);
+}
+
+/* Navigation Styling */
+#nav1 {
+    justify-content: space-between;
+    display: flex;
+}
+#foo{
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: rgb(54, 53, 53);
+    color:white;
+    font-size: 12px;
+}
+#h23{
+    padding-left:20px;
+    padding-bottom: 150px;
+    font-size: 15px;
+    color:rgb(36, 84, 186);
+}
+#but{
+    padding-bottom: 20px;
+}
+#b1{
+    background-color: rgb(227, 155, 1);
+    color:white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10%;
+    padding-left:20px;
+    padding-right: 20px;
+}
+#b1:hover{
+    background-color: rgb(239, 237, 233);
+    color:black;
+}

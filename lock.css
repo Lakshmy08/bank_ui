@@ -1,0 +1,77 @@
+body {
+    background-color: rgb(239, 237, 235);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Content Styling */
+#main {
+    background-color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom:3px;
+    
+}
+
+/* Header Styling */
+#head {
+    padding-top: 2px;
+    padding-left: 3px;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(8, 8, 74);
+}
+
+#head1 {
+    padding-top: 2px;
+    padding-left: 3px;
+    padding-right: 2px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(8, 8, 74);
+}
+#nav1 {
+    justify-content: space-between;
+    display: flex;
+}
+#new{
+    color:rgb(0, 162, 255);
+    font-weight: bold;
+    font-size: 18px;
+}
+form{
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+}
+#foo{
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: rgb(54, 53, 53);
+    color:white;
+    font-size: 12px;
+    padding-top: 10px;
+}
+button{
+    background-color: orange;
+    color:white;
+    size:30px;
+    border-radius:10%;
+}
+/* Media Query for Mobile Screens (480px and below) */
+@media (max-width: 480px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Adds space between inputs */
+    }
+    input{
+        width:80%
+    }
+
+    select {
+        width: 80%; /* Ensures the select box takes the full width in mobile view */
+    }
+}

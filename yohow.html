@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Bank of India</title>
+    <link rel="icon" type="image/x-icon" href="images.png">
+    <link rel="stylesheet" href="register.css">
+    <style>
+        /* Media Query for smaller screens */
+@media (max-width: 768px) {
+    /* Keep the top SBI section unchanged */
+    #nav1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Keep the SBI text and logo unchanged */
+    #head img, #head1 img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #head b, #head1 b {
+        font-size: 18px;
+    }
+
+    #new {
+        font-size: 16px;
+    }
+
+    /* Make the rest of the page responsive */
+    #main {
+        padding: 10px;
+    }
+
+    /* Adjust the image of yono.png to be responsive */
+    img[src="yono.png"] {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Adjust paragraph text for readability */
+    p {
+        font-size: 16px;
+    }
+
+    /* Adjust footer positioning and text size */
+    #foo {
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+/* Media Query for extra small screens (phones) */
+@media (max-width: 480px) {
+    /* Adjust heading font size */
+    p {
+        font-size: 14px;
+    }
+
+    /* Adjust images to fit smaller screens */
+    img {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Reduce text size for footer */
+    #foo p {
+        font-size: 12px;
+    }
+
+    /* Ensure 'new' text in nav fits on small screens */
+    #new {
+        font-size: 12px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="nav1">
+            <div id="head">
+                <img src="images.png" width="40px" height="40px">&nbsp;<b>SBI</b>
+            </div>
+            <div>
+                <div id="head1">
+                    <img src="images.png" width="30px" height="30px">&nbsp;<b>SBI</b>
+                </div>
+                <div id="new">ONLINE</div>
+            </div>
+        </div>  
+        <div style="background-color: rgb(36, 84, 186); padding-top:3px; padding-bottom: 3px;"></div>
+            <center><p style="font-size: 20px;color:rgb(7, 193, 250)">How do I register for yono BUSINESS</p>
+                <img src="yono.png" width="900" height="600">
+                <p>Corporate onboarding in Yono BUSINESS can be done for Corporate Internet Banking,<br>
+                e-Trade and e-Forex through following pre-login features based on corporate size and requirements:</p></center>
+                <footer>
+                    <div id="foo">
+                        <p>© State Bank of India</p>
+                    </div>
+                </footer>
+    </div>
+
+    
+</body>
+</html>

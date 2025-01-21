@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Bank of India</title>
+    <link rel="icon" type="image/x-icon" href="images.png">
+    <link rel="stylesheet" href="new.css">
+</head>
+<body>
+    <div id="main">
+        <div id="head">
+            <img src="images.png" width="40px" height="40px">&nbsp;<b>SBI</b>
+        </div>
+        <div style="background-color: rgb(36, 84, 186); padding-top:3px; padding-bottom: 3px;"></div>
+        <p style="padding-left: 15px; color:rgb(36, 84, 186)"><b>User Driven Registration - New User</b></p>
+        <p style="padding-left: 15px;color: red;font-size: 12px;"><i>Mandatory Fields are marked with asterisk *</i></p>
+        <form onsubmit="event.preventDefault(); storeFormData();"> 
+            <label for="accountNumber" style="padding-right: 62px;">Account Number <span style="color:red">*</span></label>
+            <input type="text" id="accountNumber"><br><br>
+            
+            <label for="accountHolderName" style="padding-right: 30px;">Account Holder Name<span style="color:red">*</span></label>
+            <input type="text" id="accountHolderName"><br><br>
+            
+            <label for="accountType" style="padding-right: 90px;">Account Type<span style="color:red">*</span></label>
+            <input type="text" id="accountType"><br><br>
+            
+            <label for="cifNumber" style="padding-right: 95px;">CIF Number <span style="color:red">*</span></label>
+            <input type="text" id="cifNumber"><br><br>
+            
+            <label for="branchCode" style="padding-right: 95px;">Branch code <span style="color:red">*</span></label>
+            <input type="text" id="branchCode"><br><br>
+            
+            <label for="country" style="padding-right: 140px;">Country</label>
+            <input type="text" id="country"><br><br>
+            <label for="mail" style="padding-right: 155px;">Email</label>
+            <input type="email" id="mail"><br><br>
+
+            <label for="mobileNumber" style="padding-right: 10px;">Registered Mobile number</label>
+            <input type="number" id="mobileNumber"><br><br>
+            
+            <label for="username" style="padding-right: 122px;">Username</label>
+            <input type="text" id="username"><br><br>
+            
+            <label for="password" style="padding-right: 122px;">Password</label>
+            <input type="password" id="password"><br><br>
+            
+            <label for="confirmPassword" style="padding-right: 60px;">Confirm Password</label>
+            <input type="password" id="confirmPassword"><br><br><br><br>
+            
+            <button type="submit">Submit</button>
+            <button type="button" onclick="location.href='login.html'" style="background-color: orange; color: white;">Login</button>
+        </form>
+        
+        <footer>
+            <div id="foo">
+                <p>© State Bank of India</p>
+            </div>
+        </footer>
+    </div>
+    <script src="new.js"></script>
+</body>
+</html>

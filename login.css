@@ -1,0 +1,136 @@
+body {
+    background-color: rgb(239, 237, 235);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Content Styling */
+#main {
+    background-color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom:3px;
+     
+}
+
+/* Header Styling */
+#head {
+    padding-top: 2px;
+    padding-left: 3px;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(8, 8, 74);
+}
+button{
+    background-color: orange;
+    color:white;
+    border-radius:10%;
+}
+form{
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+#foo{
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: rgb(54, 53, 53);
+    color:white;
+    font-size: 12px;
+    padding-top: 50px;
+}
+#just{
+    display: flex;
+    justify-content: space-evenly;
+}
+/* Tablet View (768px) */
+@media (max-width: 768px) {
+    #head {
+        font-size: 30px;
+    }
+
+    #main {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    #just {
+        flex-direction: column;
+    }
+
+    #just div {
+        padding: 10px;
+    }
+}
+
+/* Mobile View (480px) */
+@media (max-width: 480px) {
+    #head {
+        font-size: 24px;
+    }
+
+    #just {
+        flex-direction: column;
+    }
+
+    #just img {
+        display: none; /* Hide the image on small mobile screens */
+    }
+
+    button {
+        width: 60%;
+        padding: 10px;
+        font-size: 14px; /* Smaller font size for buttons */
+        margin-bottom: 10px; /* Add space between buttons */
+    }
+
+    form {
+        padding: 5px;
+    }
+
+    #main {
+        margin: 5px;
+        padding: 10px;
+    }
+}
+
+/* Extra-Small Mobile View (320px) */
+@media (max-width: 320px) {
+    #head {
+        font-size: 20px;
+    }
+
+    #just {
+        flex-direction: column;
+    }
+
+    #just img {
+        display: none; /* Hide the image on extra-small mobile screens */
+    }
+
+    button {
+        width: 60%;
+        padding: 10px;
+        font-size: 14px; /* Smaller font size for buttons */
+        margin-bottom: 10px; /* Add space between buttons */
+    }
+
+    form {
+        padding: 5px;
+    }
+
+    #main {
+        margin: 2px;
+        padding: 8px;
+    }
+
+    #foo {
+        font-size: 10px;
+        padding: 10px 2px;
+    }
+}

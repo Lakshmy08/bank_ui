@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Bank of India</title>
+    <link rel="icon" type="image/x-icon" href="images.png">
+    <link rel="stylesheet" href="login.css"> 
+</head>
+<body>
+    <div id="main">
+        <div id="head">
+            <img src="images.png" width="40px" height="40px">&nbsp;<b>SBI</b>
+        </div>
+    
+    <div style="background-color: rgb(36, 84, 186); padding-top:3px; padding-bottom: 3px;"></div>
+    
+    <div id="just">
+        <div>
+            <p style="padding-left: 15px; font-size:18px; color:rgb(36, 84, 186)"><b>Login to online sbi</b><br>
+                <br>Welcome to Personal Internet Banking</p>
+                <form onsubmit="event.preventDefault(); validateLogin();">
+                    <label style="padding-left:10px ; padding-right: 5px;">UserName</label>
+                    <input type="text" id="loginAccountNumber"><br><br>
+                    <label style=" padding-left:10px ; padding-right: 9px;">Password</label>
+                    <input type="password" id="loginPassword"><br><br>
+                    <div class="input-group">
+                        <label for="captcha"><b>Captcha</b></label><br><br>
+                        <div style="display: flex; align-items: center;">
+                            <span id="captcha-text" style="padding: 10px; background-color: #ddd; margin-right: 10px; font-weight: bold;">AB12C</span>&nbsp;&nbsp;&nbsp;
+                            <input type="text" id="captcha" placeholder="Enter the captcha text" required >
+                        </div>
+                    </div>
+                    <br><br><br><br><br>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </form>
+                
+        <a href="register.html" style="text-decoration: none; font-size: 12px; padding: 5px; ">New User ? Register here/Activate</a><br>
+        <a href="Forgot_password.html" style="text-decoration: none; font-size: 12px; padding: 5px;"> Forgot Username / Login Password</a><br>
+        <p style="font-size: 12px; padding: 5px;">NEVER respond to any popup,email, SMS or phone call, no matter how appealing or official looking, seeking your personal information such as username, password(s), mobile number, ATM Card details, etc. Such communications are sent or created by fraudsters to trick you into parting with your credentials.</p>
+    </div>
+    <div></div>
+    <div ><img src="pic.png" height="400" width="600">
+    <div style="background-color: rgb(17, 17, 74); color:white; font-size:12px; padding:5px;"><p>Dear Customer,
+        <ul><li>OTP based login & Mandatory login password change after 180 days introduced for added security.</li>
+        <li>Please do not share OTP/password/user information with anyone. Bank never asks for such information.</li>
+         <li>Mandatory Profile password change after 365 days introduced for added security.</li></ul></p></div>
+    </div>
+
+</div>
+    <div style="background-color: #93d2e4; font-size: 12px; padding:4px;">
+        <ul><li>Do not provide your username and password anywhere other than in this page</li>
+<li>Your username and password are highly confidential. Never part with them.SBI will never ask for this information.</li></ul>
+    </div>
+    <footer>
+        <div id="foo">
+            <p>© State Bank of India</p>
+        </div>
+    </footer>
+</div>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script src="login.js"></script>
+</body>
+</html>

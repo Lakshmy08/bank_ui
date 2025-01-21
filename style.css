@@ -1,0 +1,677 @@
+/* Body Styling */
+body {
+    background-color: rgb(239, 237, 235);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Content Styling */
+#main {
+    background-color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom:3px;
+    /* filter: blur(5px); /* Blur when popup is visible */
+    /* pointer-events: none; Prevent interaction when popup is active */ 
+}
+
+/* Header Styling */
+#head {
+    padding-top: 2px;
+    padding-left: 3px;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(8, 8, 74);
+}
+
+#head1 {
+    padding-top: 2px;
+    padding-left: 3px;
+    padding-right: 2px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(8, 8, 74);
+}
+
+/* Navigation Styling */
+#nav1 {
+    justify-content: space-between;
+    display: flex;
+}
+
+#new {
+    color: rgb(29, 144, 183);
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Popup Styling */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures it appears above other content */
+}
+
+.popup-content {
+    background-color: #1e90ff;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h1 {
+    font-size: 18px;
+}
+
+.popup-content h2 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.popup-content p {
+    margin: 10px 0;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ffc107;
+    color: black;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #ffa000;
+}
+
+/* When the popup is hidden, main content becomes interactive */
+#language-popup.hidden {
+    display: none;
+}
+
+#main.active {
+    filter: none;
+    pointer-events: all;
+}
+#nav2{
+    background-color: rgb(1, 1, 41);
+    color:white;
+    padding-top:5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom:5px;
+}
+/* General styling for the navigation container */
+#nav2 {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: space-between; /* Ensures proper spacing between nav and button */
+    background-color: #003366; /* Navbar background color */
+    padding: 10px 20px; /* Padding inside the navbar */
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for the navigation links */
+#nav2 nav {
+    display: flex;
+    gap: 20px; /* Space between each navigation link */
+}
+
+#nav2 nav a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+#nav2 nav a:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: lightblue; /* Line color between links */
+}
+
+#nav2 nav a:hover {
+    text-decoration: underline; /* Hover effect for links */
+}
+
+/* Styling for "NEW" labels */
+.new {
+    font-size: 8px;
+    font-weight: bold;
+    animation: colorChange 2s infinite; /* Apply the animation */
+}
+
+/* Animation for color changing */
+@keyframes colorChange {
+    0% { color: #ffc107; } /* Yellow */
+    25% { color: #ff5733; } /* Orange */
+    50% { color: #33ff57; } /* Green */
+    75% { color: #3357ff; } /* Blue */
+    100% { color: #ffc107; } /* Back to Yellow */
+}
+
+/* Styling for the button */
+button {
+    margin-left: 20px; /* Space between nav and button */
+    padding: 8px 16px;
+    border: none;
+    background-color: #1e90ff; /* Button background color */
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+}
+/* Navigation Menu Styling */
+#nav2 nav {
+    display: flex;
+    gap: 15px;
+    position: relative;
+}
+
+/* Style for the dropdown menu */
+/* Dropdown styles */
+/* General styles for dropdown menus */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position dropdown relative to button */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ccc; /* Light border */
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+    z-index: 10000; /* Above other content */
+    min-width: 150px; /* Ensure consistent width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Show dropdown when the "show" class is added */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* Dropdown menu items */
+.dropdown-menu li {
+    margin: 5px 0;
+}
+
+/* Links inside dropdown */
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #000 !important;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 4px;
+}
+
+/* Hover effect for dropdown links */
+.dropdown-menu li a:hover {
+    background-color:  #003366;
+    color: white !important;
+}
+.c2{
+    padding: 5px;               /* Add consistent padding */
+    border: 1px solid grey;       /* Border to create the box */
+    background-color: #f9f9f9;    /* Light background for visibility */
+    margin: 10px auto;            /* Center the div with margin auto */
+    width: 97%;                   /* Adjust width to fit content */
+    text-align: center;           /* Center align text */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Light shadow for better look */
+}
+.b2{
+    background-color: #003366;
+    size:20px;
+}
+#div1 {
+    display: flex;
+    justify-content: space-evenly; /* Spread the sections evenly */
+    align-items: stretch; /* Ensure sections have the same height */
+    gap: 20px; /* Add spacing between sections */
+    padding: 20px; /* Padding around the entire container */
+    background-color: #fff; /* Optional: Background for the container */
+}
+
+.p1 {
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    padding: 20px; /* Padding inside each section */
+    margin: 0; /* Remove any extra margin */
+    width: 45%; /* Adjust section width */
+    border: 1px solid #ddd; /* Optional: Border for clarity */
+    background-color: #f9f9f9; /* Optional: Background color */
+    display: flex; /* Use flexbox inside the sections */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Distribute content evenly */
+    align-items: center; /* Center-align content horizontally */
+    height: auto; /* Adjust height automatically to content */
+    min-height: 500px; /* Ensure both sections have the same minimum height */
+}
+
+#para {
+    font-size: 20px;
+    margin: 10px 0; /* Spacing below the heading */
+    text-align: center; /* Center the text */
+}
+
+.u1 {
+    border-radius: 50%;
+}
+
+#use {
+    display: flex;
+    justify-content: space-between; /* Spread icons evenly */
+    width: 100%; /* Take up full section width */
+    margin: 10px 0; /* Add spacing below */
+}
+
+.p12 {
+    font-size: 15px;
+    margin: 5px 0; /* Consistent spacing for text */
+    text-align: center; /* Center-align the text */
+}
+
+.text-gradient {
+    font-size: 30px;
+    font-weight: bold;
+    background: linear-gradient(to right, #E91E63, #673AB7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 10px 0; /* Add spacing around the gradient text */
+    text-align: center; /* Center-align the gradient text */
+}
+
+button.b2 {
+    margin: 10px 0; /* Spacing around buttons */
+    padding: 10px 20px; /* Button padding */
+    background-color: #004080; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button.b2:hover {
+    background-color: #003366; /* Darken button on hover */
+}
+
+p {
+    margin: 10px 0; /* Consistent spacing for paragraphs */
+    line-height: 1.5; /* Improve readability */
+    text-align: center; /* Center-align the text */
+}
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%; /* Start the text off-screen */
+    animation: marquee 50s linear infinite;
+}
+.marquee:hover span {
+    animation-play-state: paused; /* Stops animation when hovered */
+}
+@keyframes marquee {
+    from {
+        transform: translateX(0); /* Start at the right edge */
+    }
+    to {
+        transform: translateX(-100%); /* Move the text fully left */
+    }
+}
+#foo{
+    background-color: #003366;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: transparent !important; /* Remove the blue overlay */
+  box-shadow: none !important;             /* Remove any shadow */
+  border: none;                            /* Remove border if present */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: transparent; /* Ensure no background overlay on the arrow */
+  background-size: 100%;         /* Make sure the arrow is sized correctly */
+  background-repeat: no-repeat;  /* Prevent any repetition */
+}
+
+/* Optional: Change arrow colors if needed */
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.354a.5.5 0 0 1 0 .708L6.207 7.5l5.147 5.146a.5.5 0 0 1-.708.708l-5.5-5.5a.5.5 0 0 1 0-.708l5.5-5.5a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E"); /* Left arrow */
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.354a.5.5 0 0 0 0 .708L9.793 7.5l-5.147 5.146a.5.5 0 0 0 .708.708l5.5-5.5a.5.5 0 0 0 0-.708l-5.5-5.5a.5.5 0 0 0-.708 0z'/%3E%3C/svg%3E"); /* Right arrow */
+}
+.social-bar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-20%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #d7f0f9; /* Light background color */
+    border-radius: 10px 0 0 10px;
+    padding: 10px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon.facebook { background-image: url('2400861_facebook_friends_ico_media_photo add_icon.png'); }
+.social-icon.twitter { background-image: url('X_logo.jpg'); }
+.social-icon.youtube { background-image: url('channels4_profile.jpg'); }
+.social-icon.linkedin { background-image: url('images\ \(1\).png'); }
+.social-icon.instagram { background-image: url('instagram-logo-vector-illustration_1300495-24.avif'); }
+.social-icon.pinterest { background-image: url('Pinterest-logo.png'); }
+.social-icon.email { background-image: url('mail.jpg'); }
+.social-icon.whatsapp { background-image: url('WhatsApp.svg.png'); }
+
+/* Add hover effect */
+.social-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 15px;
+    text-align: right;
+}
+
+button {
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#okBtn {
+    background-color: blue;
+    color: white;
+}
+
+#cancelBtn {
+    background-color: lightgray;
+}
+
+/* Styling for the clickable link */
+.p12 a {
+    color: black;
+    cursor: pointer;
+   
+}
+/* General Styles for Devices Up to 480px */
+@media (max-width: 480px) {
+    /* Body Styling */
+    body {
+        background-color: rgb(239, 237, 235);
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Main Content Styling */
+    #main {
+        background-color: white;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-bottom: 15px;
+    }
+
+    /* Header Styling */
+    #head, #head1 {
+        font-size: 28px; /* Slightly larger font for medium mobile */
+        color: rgb(8, 8, 74);
+        padding-left: 10px;
+        padding-top: 15px;
+    }
+
+    /* Navigation Styling */
+    #nav1 {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    /* Popup Styling */
+    .popup-content {
+        background-color: #1e90ff;
+        color: white;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        width: 300px; /* Wider for larger screens */
+    }
+
+    .popup-content h1 {
+        font-size: 20px;
+    }
+
+    .popup-content h2 {
+        font-size: 16px;
+    }
+
+    .popup-content p {
+        font-size: 14px;
+    }
+
+    /* Navigation Bar */
+    #nav2 {
+        background-color: rgb(1, 1, 41);
+        color: white;
+        padding: 15px 20px;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center nav links vertically */
+    }
+
+    #nav2 nav {
+        display: flex;
+        flex-direction: column; /* Stack links for medium devices */
+        gap: 12px;
+    }
+
+    #nav2 nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    /* Social Bar */
+    .social-bar {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #d7f0f9;
+        border-radius: 10px 0 0 10px;
+        padding: 12px;
+    }
+
+    .social-icon {
+        width: 24px; /* Slightly larger icons */
+        height: 24px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modal Styling */
+    .modal-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 25px;
+        border-radius: 8px;
+        width: 85%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Button Styling */
+    button {
+        padding: 12px 25px;
+        margin: 10px 0;
+        background-color: #1e90ff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%; /* Full-width buttons */
+    }
+
+    button:hover {
+        background-color: #005bb5;
+    }
+
+    /* Text Adjustments */
+    p, h1, h2, h3 {
+        margin: 10px 0;
+        text-align: center;
+        font-size: 16px; /* Slightly larger text for medium devices */
+    }
+
+    .text-gradient {
+        font-size: 22px;
+        font-weight: bold;
+        background: linear-gradient(to right, #E91E63, #673AB7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+    }
+
+    /* Stack content with more spacing */
+    #div1 {
+        display: block;
+        padding: 15px;
+    }
+
+    .p1 {
+        margin-bottom: 12px;
+        width: 100%; /* Full-width sections */
+        text-align: center;
+    }
+
+    /* Smoother marquee for medium devices */
+    .marquee span {
+        font-size: 14px;
+        animation: marquee 25s linear infinite;
+    }
+
+    /* Footer Styling */
+    #foo {
+        background-color: #003366;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center-align footer content */
+        justify-content: center;
+        font-size: 16px; /* Adjusted for readability */
+        padding: 20px; /* More padding for spacing */
+        margin-left: 20px; /* Match the main content margins */
+        margin-right: 20px;
+        border-radius: 10px;
+    }
+
+    #foo .footer-links {
+        display: flex;
+        flex-direction: column; /* Stack footer links */
+        gap: 12px;
+        text-align: center;
+    }
+
+    #foo p {
+        margin: 0;
+        font-size: 14px; /* Adjusted for larger screens */
+        text-align: center;
+    }
+
+    #foo a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    #foo a:hover {
+        text-decoration: underline;
+    }
+}

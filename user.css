@@ -1,0 +1,148 @@
+body {
+    background-color: rgb(239, 237, 235);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Content Styling */
+#main {
+    background-color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom:3px;
+     
+}
+
+/* Header Styling */
+#head {
+    padding-top: 2px;
+    padding-left: 3px;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(8, 8, 74);
+}
+#foo{
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: rgb(54, 53, 53);
+    color:white;
+    font-size: 12px;
+    padding-top: 50px;
+}
+button{
+    background-color: orange;
+    color:white;
+}
+form{
+    padding-left: 20px;
+    padding-bottom: 50px;
+}
+#captcha-text {
+    font-family: monospace;
+    letter-spacing: 2px;
+    font-size: 18px;
+    color: #333;
+}
+@media screen and (max-width: 480px) {
+    /* Make sure the entire form fields are block-level */
+    .input-group {
+        display: block; /* Ensures captcha input group is stacked */
+        gap:5px;
+        margin-bottom: 15px; /* Adds spacing between input fields */
+    }
+
+    /* Force the date input to be on a new line */
+    input[type="date"] {
+        display: block; /* Ensures date input is a block-level element */
+        margin-top: 10px; /* Adds spacing above date input */
+        width: 80%; /* Makes sure the input takes full width */
+    }
+
+    /* Ensure captcha text is on its own line and aligned */
+    #captcha-text {
+        display: block; /* Forces captcha text to be block-level */
+        margin-bottom: 5px; /* Adds spacing between captcha text and input */
+    }
+
+    /* Ensure captcha input is on a new line and aligned to the left */
+    #captcha {
+        display: block; /* Forces captcha input to be block-level */
+        margin-left: 0 !important; /* Aligns captcha input to the left */
+        margin-top: 5px; /* Adds space between captcha text and input field */
+    }
+
+    /* Other style improvements for layout */
+    form {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    button {
+        width: 80%; /* Makes the submit button take full width on small screens */
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 385px) {
+    /* Ensure the captcha container stays within bounds */
+    .captcha-container {
+        width: 80%; /* Full width of the screen */
+        padding: 0 10px; /* Adds padding around the container */
+        box-sizing: border-box; /* Include padding in width calculation */
+        overflow: hidden; /* Prevent horizontal overflow */
+    }
+
+    /* Ensure input groups are block-level */
+    .input-group {
+        display: block; /* Ensures captcha input group is stacked */
+        gap: 5px;
+        margin-bottom: 15px; /* Adds spacing between input fields */
+        width: 100%; /* Takes full width */
+        box-sizing: border-box; /* Ensures padding/border included in width */
+    }
+
+    /* Ensure the date input is block-level and takes full width */
+    input[type="date"] {
+        display: block;
+        width: 100%; /* Takes full width */
+        margin-top: 10px;
+        box-sizing: border-box; /* Ensure padding is inside width */
+    }
+
+    /* Ensure the captcha text is on its own line */
+    #captcha-text {
+        display: block;
+        margin-bottom: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Adjust the CAPTCHA input to fit */
+    #captcha {
+        display: block;
+        margin-left: 0 !important;
+        margin-top: 5px;
+        width: 70%; /* Make CAPTCHA input take up full width */
+        max-width: 200px; /* Ensure it doesn't stretch too wide */
+        box-sizing: border-box; /* Include padding/border in width calculation */
+    }
+
+    /* Make the button full width on small screens */
+    button {
+        width: 100%; /* Takes full width on small screens */
+        padding: 10px;
+        font-size: 16px;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Adjust the form padding */
+    form {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

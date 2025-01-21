@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Bank of India</title>
+    <link rel="icon" type="image/x-icon" href="images.png">
+    <link rel="stylesheet" href="lock.css"> 
+</head>
+<body>
+    <div id="main">
+        <div id="nav1">
+            <div id="head">
+                <img src="images.png" width="40px" height="40px">&nbsp;<b>SBI</b>
+            </div>
+            <div>
+                <div id="head1">
+                    <img src="images.png" width="30px" height="30px">&nbsp;<b>SBI</b>
+                </div>
+                <div id="new">ONLINE</div>
+            </div>
+            
+        </div>  
+        <div style="background-color: rgb(8, 8, 74);padding: 5px;"></div>
+        <p style="padding-left: 15px; color:rgb(36, 84, 186)"><b>Lock and Unlock Internet Banking Access</b></p>
+        <p style="padding-left: 15px;color: red;font-size: 12px;"><i>Mandatory Fields are marked with asterisk *</i></p>
+        <form id="lockUnlockForm"> <!-- Added ID -->
+            <label style="padding-right: 15px;">Select Lock or Unlock User Access  <span style="color:red">*</span></label>
+            <select id="action"> <!-- Added ID -->
+                <option value="lock">Lock User</option>
+                <option value="unlock">Unlock User</option>
+            </select><br><br>
+        
+            <label style="padding-right: 172px;">Username</label>
+            <input type="text" id="username"><br><br> <!-- Added ID -->
+        
+            <label style="padding-right: 132px;">Account Number</label>
+            <input type="text" id="accountNumber"><br><br> <!-- Added ID -->
+        
+            <label style="padding-right: 172px;">Password</label>
+            <input type="password" id="password"><br><br><br><br> <!-- Fixed input type -->
+        
+            <center>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </center><br><br>
+        </form>
+        <center><button><a href="index.html" style="text-decoration: none; color: white;">Go back to home</a></button></center>
+        <br><br><br><br>
+        <footer>
+            <div id="foo">
+                <p>© State Bank of India</p>
+            </div>
+        </footer>
+        </div>
+        <script src="lock.js"></script>
+</body>
+</html>
