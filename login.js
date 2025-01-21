@@ -42,6 +42,12 @@ function validateLogin() {
     );
 
     if (user) {
+        // Check if the user's account is locked
+        if (user.isLocked) {
+            alert("Your account is locked. Please contact support to unlock it.");
+            return;
+        }
+
         // Store the username in localStorage
         localStorage.setItem("loggedInUser", loginUsername);
 
