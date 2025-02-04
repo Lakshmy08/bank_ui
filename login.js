@@ -1,71 +1,81 @@
-function validateLogin() {
-    // Retrieve user data and activated users from local storage
-    const storedData = localStorage.getItem("sbiUserData");
-    const activatedUsers = JSON.parse(localStorage.getItem("activatedUsers")) || [];
+async function validateLogin(event) {
+    event.preventDefault(); // Prevent form submission
 
-    // Check if any user data exists
-    if (!storedData) {
-        alert("No user data found. Please register first!");
-        return;
-    }
+    const form = event.target;
+    const loginUsername = form.loginAccountNumber.value.trim();
+    const loginPassword = form.loginPassword.value.trim();
+    const captchaInput = form.captcha.value.trim();
+    const captchaTextElement = document.getElementById("captcha-text");
 
-    const storedUserData = JSON.parse(storedData);
-
-    // Retrieve input values
-    const loginUsername = document.getElementById("loginAccountNumber").value.trim(); // login by username
-    const loginPassword = document.getElementById("loginPassword").value.trim();
-    const captchaInput = document.getElementById("captcha").value.trim();
-    const generatedCaptcha = document.getElementById("captcha-text").innerText.trim();
-
-    // Ensure username and password are entered
     if (!loginUsername || !loginPassword) {
         alert("Please enter both username and password.");
         return;
     }
 
-    // Validate CAPTCHA
+    if (!captchaTextElement) {
+        alert("Captcha is missing. Please refresh the page.");
+        return;
+    }
+
+    const generatedCaptcha = captchaTextElement.innerText.trim();
+
     if (captchaInput !== generatedCaptcha) {
         alert("Captcha is incorrect. Please try again.");
-        generateCaptcha(); // Regenerate CAPTCHA after incorrect input
+        generateCaptcha();
         return;
     }
 
-    // Check if the user is activated
-    if (!activatedUsers.includes(loginUsername)) {
-        alert("User is not activated! Please activate your account first.");
-        return;
-    }
+    try {
+        const loginButton = form.querySelector("button[type='submit']");
+        loginButton.disabled = true; // Prevent multiple clicks
 
-    // Validate login credentials using username and password
-    const user = storedUserData.find(
-        (user) => user.username === loginUsername && user.password === loginPassword
-    );
+        const response = await fetch("https://bank-back-ict4.onrender.com/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username: loginUsername, password: loginPassword })
+        });
 
-    if (user) {
-        // Store the username in localStorage
-        localStorage.setItem("loggedInUser", loginUsername);
+        const result = await response.json();
 
-        // Retrieve accountHolderName from the matched user object
-        const accountHolderName = user.accountHolderName;
+        if (!response.ok) {
+            throw new Error(result.error || "Login failed.");
+        }
 
-        // Display login success message with account holder's name
-        alert("Login successful! Welcome, " + accountHolderName);
+        localStorage.setItem("authToken", result.token);
+        localStorage.setItem("loggedInUser", JSON.stringify(result.user));
 
-        // Redirect to the transaction page
+        alert(`Login successful! Welcome, ${result.user.name}`);
         window.location.href = "transaction.html";
-    } else {
-        alert("Invalid username or password.");
+    } catch (error) {
+        console.error("❌ Login Error:", error);
+        alert(error.message || "Server error! Please try again later.");
+    } finally {
+        form.querySelector("button[type='submit']").disabled = false;
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("loginForm");
+    if (form) {
+        form.addEventListener("submit", validateLogin);
+    } else {
+        console.error("Form element with id 'loginForm' not found.");
+    }
+});
 
 // Generate a random CAPTCHA
 function generateCaptcha() {
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let captcha = "";
-    for (let i = 0; i < 5; i++) {
+    for (let i = 5; i > 0; i--) {
         captcha += characters.charAt(Math.floor(Math.random() * characters.length));
     }
-    document.getElementById("captcha-text").innerText = captcha;
+    const captchaText = document.getElementById("captcha-text");
+    if (captchaText) {
+        captchaText.innerText = captcha;
+    } else {
+        console.error("Captcha text element not found.");
+    }
 }
 
 // Initialize CAPTCHA

@@ -19,40 +19,55 @@
                 </div>
                 <div id="new">ONLINE</div>
             </div>
-            
         </div>  
-        <div style="background-color: rgb(8, 8, 74);padding: 5px;"></div>
-        <p style="padding-left: 15px; color:rgb(36, 84, 186)"><b>Lock and Unlock Internet Banking Access</b></p>
-        <p style="padding-left: 15px;color: red;font-size: 12px;"><i>Mandatory Fields are marked with asterisk *</i></p>
-        <form id="lockUnlockForm"> <!-- Added ID -->
-            <label style="padding-right: 15px;">Select Lock or Unlock User Access  <span style="color:red">*</span></label>
-            <select id="action"> <!-- Added ID -->
+        <div style="background-color: rgb(8, 8, 74); padding: 5px;"></div>
+
+        <p style="padding-left: 15px; color: rgb(36, 84, 186)"><b>Lock and Unlock Internet Banking Access</b></p>
+        <p style="padding-left: 15px; color: red; font-size: 12px;"><i>Mandatory Fields are marked with asterisk *</i></p>
+
+        <!-- Updated Form -->
+        <form id="lockUnlockForm">
+            <label>Select Lock or Unlock User Access <span style="color:red">*</span></label>
+            <select id="action">
                 <option value="lock">Lock User</option>
                 <option value="unlock">Unlock User</option>
-            </select><br><br>
-        
-            <label style="padding-right: 172px;">Username</label>
-            <input type="text" id="username"><br><br> <!-- Added ID -->
-        
-            <label style="padding-right: 132px;">Account Number</label>
-            <input type="text" id="accountNumber"><br><br> <!-- Added ID -->
-        
-            <label style="padding-right: 172px;">Password</label>
-            <input type="password" id="password"><br><br><br><br> <!-- Fixed input type -->
-        
+            </select>
+            <br><br>
+
+            <label style="padding-right:110px">Admin Username <span style="color:red">*</span></label>
+            <input type="text" id="adminUsername" required>
+            <br><br>
+
+            <label style="padding-right:110px">Admin Password <span style="color:red">*</span></label>
+            <input type="password" id="adminPassword" required>
+            <br><br>
+
+            <label style="padding-right:80px">User Account Number <span style="color:red">*</span></label>
+            <input type="text" id="accountNumber" required>
+            <br><br>
+
             <center>
                 <button type="submit">Submit</button>
                 <button type="reset">Reset</button>
-            </center><br><br>
+            </center>
+            <br><br>
         </form>
-        <center><button><a href="index.html" style="text-decoration: none; color: white;">Go back to home</a></button></center>
+
+        <center>
+            <button>
+                <a href="index.html" style="text-decoration: none; color: white;">Go back to home</a>
+            </button>
+        </center>
+
         <br><br><br><br>
+
         <footer>
             <div id="foo">
                 <p>© State Bank of India</p>
             </div>
         </footer>
-        </div>
-        <script src="lock.js"></script>
+    </div>
+
+    <script src="lock.js"></script>
 </body>
 </html>

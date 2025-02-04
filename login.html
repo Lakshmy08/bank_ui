@@ -19,7 +19,8 @@
         <div>
             <p style="padding-left: 15px; font-size:18px; color:rgb(36, 84, 186)"><b>Login to online sbi</b><br>
                 <br>Welcome to Personal Internet Banking</p>
-                <form onsubmit="event.preventDefault(); validateLogin();">
+                <form id="loginForm" onsubmit="validateLogin()">
+
                     <label style="padding-left:10px ; padding-right: 5px;">UserName</label>
                     <input type="text" id="loginAccountNumber"><br><br>
                     <label style=" padding-left:10px ; padding-right: 9px;">Password</label>

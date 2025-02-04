@@ -15,7 +15,7 @@
         <div style="background-color: rgb(36, 84, 186); padding-top:3px; padding-bottom: 3px;"></div>
         <p style="padding-left: 15px; color:rgb(36, 84, 186)"><b>User Driven Registration - New User</b></p>
         <p style="padding-left: 15px;color: red;font-size: 12px;"><i>Mandatory Fields are marked with asterisk *</i></p>
-        <form onsubmit="event.preventDefault(); storeFormData();"> 
+        <form id="signupForm">
             <label for="accountNumber" style="padding-right: 62px;">Account Number <span style="color:red">*</span></label>
             <input type="text" id="accountNumber"><br><br>
             
@@ -38,7 +38,8 @@
 
             <label for="mobileNumber" style="padding-right: 10px;">Registered Mobile number</label>
             <input type="number" id="mobileNumber"><br><br>
-            
+            <label for="date" style="padding-right:160px">Date</label>
+            <input type="date" id="date"><br><br>
             <label for="username" style="padding-right: 122px;">Username</label>
             <input type="text" id="username"><br><br>
             

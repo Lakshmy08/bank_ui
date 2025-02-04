@@ -8,8 +8,8 @@ function generateCaptcha() {
     document.getElementById('captcha-text').innerText = captcha;
 }
 
-// Validate CAPTCHA and activate the user
-function validateForm(event) {
+// Validate CAPTCHA and send activation request
+async function validateForm(event) {
     event.preventDefault(); // Prevent form submission
 
     const username = document.querySelector("input[name='username']").value.trim();
@@ -31,39 +31,37 @@ function validateForm(event) {
         return;
     }
 
-    // Retrieve existing activated users and data
-    let activatedUsers = JSON.parse(localStorage.getItem("activatedUsers")) || [];
-    let activatedData = JSON.parse(localStorage.getItem("activatedData")) || []; // Store additional activation data
+    try {
+        const response = await fetch("https://bank-back-ict4.onrender.com/activate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, cifNumber, dob })
+        });
 
-    // Check if the user is already activated
-    if (activatedUsers.includes(username)) {
-        if (!sessionStorage.getItem("alreadyActivated")) {
-            alert("User is already activated. You can log in."); // Show alert
-            sessionStorage.setItem("alreadyActivated", "true"); // Set session flag
+        const result = await response.json();
+
+        if (!response.ok) {
+            alert(`Activation failed: ${result.error}`);
+            return;
         }
+
+        alert("User activated successfully! You can now log in.");
         window.location.href = "login.html"; // Redirect to login page
-        return; // Exit function
+
+    } catch (error) {
+        console.error("❌ Activation Error:", error);
+        alert("Server error! Please try again later.");
     }
-
-    // Add the user to the activated list and store additional activation data
-    activatedUsers.push(username);
-    activatedData.push({ username, cifNumber, dob });
-
-    // Save to localStorage
-    localStorage.setItem("activatedUsers", JSON.stringify(activatedUsers));
-    localStorage.setItem("activatedData", JSON.stringify(activatedData));
-
-    // Show activation success message
-    alert("User activated successfully! You can now log in.");
-    window.location.href = "login.html"; // Redirect to login page
 }
 
 // Initialize CAPTCHA and attach event listener to form
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
     generateCaptcha();
 
-    const form = document.getElementById("myForm");
-
-    // Ensure only one event listener is attached to the form
-    form.addEventListener("submit", validateForm);
-};
+    const form = document.getElementById("activationForm");
+    if (form) {
+        form.addEventListener("submit", validateForm);
+    } else {
+        console.error("Form element with id 'activationForm' not found.");
+    }
+});
